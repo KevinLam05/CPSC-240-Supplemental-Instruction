@@ -1,0 +1,53 @@
+// Program Name: "". This program demonstrates.  Copyright (C) 2026  Dianella Sy
+
+// This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License  
+// version 3 as published by the Free Software Foundation.                                                                    
+// This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied         
+// warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.      
+// A copy of the GNU General Public License v3 is available here: <https://www.gnu.org/licenses/>.
+
+// Author Information:
+// Name:
+// CWID:
+// Section: CPSC 240-#
+// Email: @csu.fullerton.edu
+
+// Program Information:
+// Name:
+// Languages:
+// Start Date:
+// Completion Date:
+
+// Program's Purpose:
+// The "" will teach/introduce.
+
+// Project Information:
+// Files: 
+// Developing Computer: 
+// Status:
+
+// Translator Information:
+// GNU Compiler:
+// GNU Linker:
+
+// Execution:
+// ./go.out
+
+
+#include <stdio.h>
+#include <iostream>
+
+extern "C" double arithmetic();
+
+int main(int argc, char* argv[]) {
+
+    printf("\nWelcome to 'Arithmetic: Assignment 1 Help' maintained by Dianella Sy.\n");
+
+    double return_number = arithmetic();
+    
+    printf("\nThe driver has received this number %1.2lf and will keep it for future use.\nHave a great day.\n", return_number);
+
+    printf("\nA zero will be sent to the operating system as a signal of a successful execution.\n");
+    
+    return 0;
+}
