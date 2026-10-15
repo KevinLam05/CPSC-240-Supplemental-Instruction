@@ -32,7 +32,7 @@
 
 
 ; Declaration Section
-
+%include "macro.inc"    ; Contains macros
 extern printf
 extern fgets
 extern stdin
@@ -70,7 +70,7 @@ segment .text
 arithmetic: 
 
 ; Macro backs up the GPRs
-
+create_activation_record
 
 
 ; Output the software maintainance message
@@ -125,31 +125,45 @@ movsd xmm14, xmm0
 
 
 ; Ask for the third number
-
+mov   rax, 0
+mov   rdi, string_format
+mov   rsi, prompt_repeat_number
+call printf
 
 ; Obtain the third number
-
+mov   rax, 0
+mov   rdi, number_three
+mov   rsi, maximum_number_of_characters_for_input
+mov  rdx, [stdin]
+call fgets
 
 ; Convert the string of number to a floating-point number
-
+mov rax, 0
+mov rdi, number_three
+call atof
+movsd xmm13, xmm0
 
 ; Add the first and second number
+
+addsd xmm15, xmm14
 
 
 ; Subtract the first and third number
 
+subsd xmm15, xmm13
+
 
 ; Multiply the second and third number
-
+mulsd xmm14, xmm13
 
 ; Divide the first and second number
-
+divsd xmm15, xmm14
 
 ; Send the result of xmm15 to main.c
-
+movsd xmm0, xmm15
 
 ; Restore original values to general registers
-
+delete_activation_record
 
 ; Return
 ret

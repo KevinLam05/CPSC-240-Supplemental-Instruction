@@ -30,7 +30,7 @@
 ; Linux:
 ; Linux:
 
-
+%include "activation_record.inc"
 extern fgets
 extern stdin
 extern printf
@@ -73,7 +73,7 @@ segment .text
 contacts:
 
 ; Macro backs up the GPRs
-
+create_activation_record
 
 
 ; Output program instructions
@@ -91,16 +91,24 @@ call printf
 
 
 ; Create 800 bytes for the incoming phone number (maximum number of bytes the user can input for the phone number)
+sub rsp, 800
 
-
+begin_loop:
 ; Obtain a phone number from the keyboard 
-
+mov rax, 0 
+mov rdi, rsp
+mov rsi, 799
+mov rdx, [stdin]
+call fgets
 
 ; Check if the user does Control+D
-
+cmp eax, 0
+je finish_loop
+je begin_loop
+finish_loop:
 
 ; Reverse the subtraction from creating 800 bytes for the incoming phone number
-
+add rsp, 800
 
 ; Output that the program will return execution to the main function
 mov  rax, 0
@@ -110,5 +118,5 @@ call printf
 
 
 ; Restore original values to general registers
-
+delete_activation_record
 ret

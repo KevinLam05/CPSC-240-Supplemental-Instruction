@@ -39,6 +39,7 @@ global random_number
 
 segment .data
 
+ieee754_and_scientific_decimal_format db "0x%-18lX%.13g", 10, 0
 
 
 
@@ -79,14 +80,17 @@ pushf
 
 ; Generate a random number from the computer (CPU) and put it in r15
 
-
+drand r15 ; Random number is already in IEEE754
 
 ; Print the random number in IEEE754 and Scientific Decimal format
-
+mov rax, 0
+mov rdi, ieee754_and_scientific_decimal_format
+mov rsi, r15
+call printf
 
 ; Return the random number from the computer to main.c
 
-
+mov rax, r15
 
 ; Pop the General Purpose Registers (GPRs) so the pointer can be restored to the top of the stack and the values can be restored before this function was called
 ; After all the pops are done, the stack will be how it was before the function executed

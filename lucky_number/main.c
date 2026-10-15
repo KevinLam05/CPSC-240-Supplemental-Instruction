@@ -50,7 +50,7 @@ int main(int argc, char* argv[]) {
         printf("\nUnfortunately, you did not type the lucky number. Try again! 😟");
     }
     
-
+    printf("\n\nTHe driver has received this number %1.5lf and will keep it for future use. Have a great day \n");
     
     printf("\nA zero will be sent to the operating system as a signal of a successful execution.\n");
     

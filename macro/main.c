@@ -6,11 +6,11 @@
 // warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.      
 // A copy of the GNU General Public License v3 is available here: <https://www.gnu.org/licenses/>.
 
-// Author Information:
-// Name:
-// CWID:
-// Section: CPSC 240-#
-// Email: @csu.fullerton.edu
+// Name: Kevin Lam
+// Email: kevinlawc@csu.fullerton.edu
+// Date: October 16, 2024
+// Course ID: CPSC 240-19
+// Statement of Purpose: Manages Program (calls magnitude, input_array, & show_array)
 
 // Program Information:
 // Name:
@@ -39,7 +39,7 @@
 extern double macro_practice();
 
 int main(int argc, char* argv[]) {
-    printf("\nWelcome to Macro Practice by Dianella Sy!\n\n");
+    printf("\nWelcome to Macro Practice by Kevin Lam!\n\n");
 
     double area_of_the_triangle = 0.0;
     area_of_the_triangle = macro_practice();
